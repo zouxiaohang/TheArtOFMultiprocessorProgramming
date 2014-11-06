@@ -1,4 +1,4 @@
-The Art OF Multiprocessor Programming
+The Art Of Multiprocessor Programming
 =================================
 
 多处理器编程的艺术
