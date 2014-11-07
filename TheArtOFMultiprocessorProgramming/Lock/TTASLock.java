@@ -1,6 +1,6 @@
 import java.util.concurrent.atomic.*;
 
-class TTASLock{
+public class TTASLock{
 	private AtomicBoolean flag = new AtomicBoolean(false);
 	
 	public void lock(){

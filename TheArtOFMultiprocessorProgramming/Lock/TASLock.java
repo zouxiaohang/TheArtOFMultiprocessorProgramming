@@ -1,6 +1,6 @@
 import java.util.concurrent.atomic.*;
 
-class TASLock{
+public class TASLock{
 	private AtomicBoolean flag = new AtomicBoolean(false);
 	public void lock(){
 		/*（1）flag的每一次getAndSet都会重写其cache中的值，
