@@ -9,3 +9,4 @@ The Art Of Multiprocessor Programming
     * TTASLock
     * ArrayLock
     * BackoffLock
+    * CLHLock
