@@ -10,3 +10,4 @@ The Art Of Multiprocessor Programming
     * ArrayLock
     * BackoffLock
     * CLHLock
+    * MCSLock
