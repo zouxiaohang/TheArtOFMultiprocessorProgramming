@@ -13,3 +13,4 @@ The Art Of Multiprocessor Programming
     * BackoffLock
     * CLHLock
     * MCSLock
+    * TimeOutLock
