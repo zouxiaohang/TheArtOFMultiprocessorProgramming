@@ -15,13 +15,13 @@ public class CompositeFastPathLock extends CompositeLock{
 		QNode qnode;
 		qnode = tail.get(stamp);
 		oldStamp = stamp[0];
-		if(qnode != null){
+		if(qnode != null){//已有node加入了queue
 			return false;
 		}
-		if((oldStamp & FASTPATH) != 0){
+		if((oldStamp & FASTPATH) != 0){//已经set了FASTPATH flag
 			return false;
 		}
-		newStamp = (oldStamp + 1) | FASTPATH;
+		newStamp = (oldStamp + 1) | FASTPATH;//set FASTPATH flag
 		return tail.compareAndSet(qnode, null, oldStamp, newStamp);
 	}
 	public boolean tryLock(long time, TimeUnit unit) throws InterruptedException{
@@ -29,6 +29,7 @@ public class CompositeFastPathLock extends CompositeLock{
 			return true;
 		}
 		if(super.tryLock(time, unit)){
+			//spin直到没有任何线程hold fast-path lock
 			while((tail.getStamp() & FASTPATH) != 0){};
 			return true;
 		}
@@ -37,7 +38,7 @@ public class CompositeFastPathLock extends CompositeLock{
 	private boolean fastPathUnlock(){
 		int oldStamp, newStamp;
 		oldStamp = tail.getStamp();
-		if((oldStamp & FASTPATH) == 0){
+		if((oldStamp & FASTPATH) == 0){//没有set FASTPATH flag
 			return false;
 		}
 		int[] stamp = {0};
@@ -51,7 +52,7 @@ public class CompositeFastPathLock extends CompositeLock{
 	}
 	public void unlock(){
 		if(!fastPathUnlock()){
-			super.unlock();
+			super.unlock();//没有set FASTPATH flag则调用父类的方法
 		}
 	}
 }
