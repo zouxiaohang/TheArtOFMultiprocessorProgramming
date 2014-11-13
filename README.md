@@ -14,3 +14,4 @@ The Art Of Multiprocessor Programming
     * CLHLock
     * MCSLock
     * TimeOutLock
+    * CompositeLock
