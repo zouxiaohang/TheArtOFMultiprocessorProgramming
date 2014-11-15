@@ -15,3 +15,4 @@ The Art Of Multiprocessor Programming
     * MCSLock
     * TimeOutLock
     * CompositeLock
+    * CompositeFastPathLock
