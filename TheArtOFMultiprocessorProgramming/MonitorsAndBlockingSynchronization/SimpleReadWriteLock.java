@@ -13,7 +13,7 @@ public class SimpleReadWriteLock{
 		public void lock() throws InterruptedException{
 			lock.lock();
 			try{
-				while(writer){
+				while(writer){//只要有线程持有写锁则wait
 					condition.await();
 				}
 				++readers; 
@@ -26,7 +26,7 @@ public class SimpleReadWriteLock{
 			try{
 				--readers;
 				if(readers == 0)
-					condition.signalAll();
+					condition.signalAll();//通知所有线程此时可以持有读写锁了
 			}finally{
 				lock.unlock();
 			}
@@ -36,7 +36,11 @@ public class SimpleReadWriteLock{
 		public void lock() throws InterruptedException{
 			lock.lock();
 			try{
+				//线程持有读锁或写锁则wait
 				while(readers > 0 || writer){
+					/*
+					*缺点：如果reader过多则造成writer长久等待而得不到写锁
+					*/
 					condition.await();
 				}
 				writer = true;
@@ -48,7 +52,7 @@ public class SimpleReadWriteLock{
 			lock.lock();
 			try{
 				writer = false;
-				condition.signalAll();
+				condition.signalAll();//通知所有线程此时可以持有读写锁了
 			}finally{
 				lock.unlock();
 			}
