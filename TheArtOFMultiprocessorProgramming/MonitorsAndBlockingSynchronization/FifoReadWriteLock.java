@@ -16,6 +16,9 @@ public class FifoReadWriteLock{
 				while(writer){
 					condition.await();
 				}
+				/*
+				*潜在bug：readAcquires只加不减会造成溢出从而和readReleases匹配出错
+				*/
 				++readAcquires;
 			}finally{
 				lock.unlock();
@@ -24,9 +27,20 @@ public class FifoReadWriteLock{
 		public void unlock(){
 			lock.lock();
 			try{
+				/*
+				*潜在bug：readReleases只加不减会造成溢出从而和readAcquires匹配出错
+				*/
 				++readReleases;
-				if(readAcquires == readReleases)
+				if(readAcquires == readReleases)//当两者相等时表示无线程持有lock
 					condition.signalAll();
+				//我的fix bug代码：
+				//将上两句改为：
+				/*
+				if(readAcquires == readReleases){
+					readAcquires = readReleases = 0;
+					condition.signalAll();
+				}
+				*/
 			}finally{
 				lock.unlock();
 			}
@@ -36,10 +50,12 @@ public class FifoReadWriteLock{
 		public void lock() throws InterruptedException{
 			lock.lock();
 			try{
-				while(writer){
+				while(writer){//当线程持有写锁时才wait
 					condition.await();
 				}
+				//设置writer为true，防止有新的readLock被持有
 				writer = true;
+				//当还有读锁被持有时则等待
 				while(readAcquires != readReleases){
 					condition.await();
 				}
