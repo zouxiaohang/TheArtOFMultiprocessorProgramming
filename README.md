@@ -16,3 +16,6 @@ The Art Of Multiprocessor Programming
     * TimeOutLock
     * CompositeLock
     * CompositeFastPathLock
+*   Chapter 8:
+    * SimpleReadWriteLock
+    * FifoReadWriteLock
