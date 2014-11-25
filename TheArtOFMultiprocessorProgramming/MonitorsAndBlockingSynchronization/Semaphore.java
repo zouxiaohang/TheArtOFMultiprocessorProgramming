@@ -18,7 +18,7 @@ public class Semaphore{
 		lock.lock();
 		try{
 			while(state == capacity){
-				condition.await();
+				condition.await();//等待有线程离开CS区
 			}
 			++state;
 		}finally{
@@ -29,7 +29,7 @@ public class Semaphore{
 		lock.lock();
 		try{
 			--state;
-			condition.signalAll();
+			condition.signalAll();//通知有线程离开CS区了
 		}finally{
 			lock.unlock();
 		}
