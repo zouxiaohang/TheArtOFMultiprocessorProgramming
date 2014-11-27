@@ -19,3 +19,4 @@ The Art Of Multiprocessor Programming
 *   Chapter 8:
     * SimpleReadWriteLock
     * FifoReadWriteLock
+    * Semaphore
