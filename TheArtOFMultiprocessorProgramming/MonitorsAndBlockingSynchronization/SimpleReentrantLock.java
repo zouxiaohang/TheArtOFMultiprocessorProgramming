@@ -18,11 +18,11 @@ public class SimpleReentrantLock{
 		long me = Thread.currentThread().getId();
 		lock.lock();
 		try{
-			if(owner == me){
+			if(owner == me){//同一个线程
 				++holdCount;
 				return;
 			}
-			while(holdCount != 0){
+			while(holdCount != 0){//不同线程且其他线程已经持有lock了
 				condition.await();
 			}
 			owner = me;
