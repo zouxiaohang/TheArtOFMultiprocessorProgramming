@@ -20,3 +20,4 @@ The Art Of Multiprocessor Programming
     * SimpleReadWriteLock
     * FifoReadWriteLock
     * Semaphore
+    * SimpleReentrantLock
