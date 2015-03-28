@@ -106,7 +106,13 @@
     <None Include="Unsafe.java" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="park.cpp" />
+    <ClCompile Include="thread.cpp" />
     <ClCompile Include="unsafe.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="park.hpp" />
+    <ClInclude Include="thread.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

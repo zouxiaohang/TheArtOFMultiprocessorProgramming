@@ -103,5 +103,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="unsafe.cpp" />
+    <ClCompile Include="park.cpp" />
+    <ClCompile Include="thread.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="park.hpp" />
+    <ClInclude Include="thread.hpp" />
   </ItemGroup>
 </Project>
