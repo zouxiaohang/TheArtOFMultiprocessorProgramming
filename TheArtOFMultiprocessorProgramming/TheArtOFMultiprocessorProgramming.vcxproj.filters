@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Lock">
+      <UniqueIdentifier>{91e27911-b0ef-40eb-a94a-1a3e0e891444}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MonitorsAndBlockingSynchronization">
+      <UniqueIdentifier>{f55754a5-bc1b-4c51-b8fd-6c24f93864b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="JavaConcurrent">
+      <UniqueIdentifier>{27abf886-00a8-49c4-9f7e-e0a27509dcaf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="JavaConcurrent\Atomic">
+      <UniqueIdentifier>{3b29f8db-1b16-45ef-9552-5a3226cf37e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="JavaConcurrent\Locks">
+      <UniqueIdentifier>{875fad95-17ea-4003-8fe3-3a3e8b346af2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Lock\TASLock.java">
+      <Filter>Lock</Filter>
+    </None>
+    <None Include="Lock\TTASLock.java">
+      <Filter>Lock</Filter>
+    </None>
+    <None Include="Lock\ArrayLock.java">
+      <Filter>Lock</Filter>
+    </None>
+    <None Include="Lock\Backoff.java">
+      <Filter>Lock</Filter>
+    </None>
+    <None Include="Lock\BackoffLock.java">
+      <Filter>Lock</Filter>
+    </None>
+    <None Include="Lock\CLHLock.java">
+      <Filter>Lock</Filter>
+    </None>
+    <None Include="Lock\MCSLock.java">
+      <Filter>Lock</Filter>
+    </None>
+    <None Include="Lock\TimeOutLock.java">
+      <Filter>Lock</Filter>
+    </None>
+    <None Include="Lock\CompositeLock.java">
+      <Filter>Lock</Filter>
+    </None>
+    <None Include="Lock\CompositeFastPathLock.java">
+      <Filter>Lock</Filter>
+    </None>
+    <None Include="MonitorsAndBlockingSynchronization\SimpleReadWriteLock.java">
+      <Filter>MonitorsAndBlockingSynchronization</Filter>
+    </None>
+    <None Include="MonitorsAndBlockingSynchronization\FifoReadWriteLock.java">
+      <Filter>MonitorsAndBlockingSynchronization</Filter>
+    </None>
+    <None Include="MonitorsAndBlockingSynchronization\Semaphore.java">
+      <Filter>MonitorsAndBlockingSynchronization</Filter>
+    </None>
+    <None Include="MonitorsAndBlockingSynchronization\SimpleReentrantLock.java">
+      <Filter>MonitorsAndBlockingSynchronization</Filter>
+    </None>
+    <None Include="concurrent\atomic\AtomicBoolean.java">
+      <Filter>JavaConcurrent\Atomic</Filter>
+    </None>
+    <None Include="concurrent\atomic\AtomicInteger.java">
+      <Filter>JavaConcurrent\Atomic</Filter>
+    </None>
+    <None Include="concurrent\atomic\AtomicIntegerArray.java">
+      <Filter>JavaConcurrent\Atomic</Filter>
+    </None>
+    <None Include="concurrent\atomic\AtomicIntegerFieldUpdater.java">
+      <Filter>JavaConcurrent\Atomic</Filter>
+    </None>
+    <None Include="concurrent\atomic\AtomicLong.java">
+      <Filter>JavaConcurrent\Atomic</Filter>
+    </None>
+    <None Include="concurrent\atomic\AtomicLongArray.java">
+      <Filter>JavaConcurrent\Atomic</Filter>
+    </None>
+    <None Include="concurrent\atomic\AtomicLongFieldUpdater.java">
+      <Filter>JavaConcurrent\Atomic</Filter>
+    </None>
+    <None Include="concurrent\atomic\AtomicMarkableReference.java">
+      <Filter>JavaConcurrent\Atomic</Filter>
+    </None>
+    <None Include="concurrent\atomic\AtomicReference.java">
+      <Filter>JavaConcurrent\Atomic</Filter>
+    </None>
+    <None Include="concurrent\atomic\AtomicReferenceArray.java">
+      <Filter>JavaConcurrent\Atomic</Filter>
+    </None>
+    <None Include="concurrent\atomic\AtomicReferenceFieldUpdater.java">
+      <Filter>JavaConcurrent\Atomic</Filter>
+    </None>
+    <None Include="concurrent\atomic\AtomicStampedReference.java">
+      <Filter>JavaConcurrent\Atomic</Filter>
+    </None>
+    <None Include="concurrent\atomic\package-info.java">
+      <Filter>JavaConcurrent\Atomic</Filter>
+    </None>
+    <None Include="Unsafe.java" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="unsafe.cpp" />
+  </ItemGroup>
+</Project>
