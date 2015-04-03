@@ -100,6 +100,36 @@
       <Filter>JavaConcurrent\Atomic</Filter>
     </None>
     <None Include="Unsafe.java" />
+    <None Include="locks\AbstractOwnableSynchronizer.java">
+      <Filter>JavaConcurrent\Locks</Filter>
+    </None>
+    <None Include="locks\AbstractQueuedLongSynchronizer.java">
+      <Filter>JavaConcurrent\Locks</Filter>
+    </None>
+    <None Include="locks\AbstractQueuedSynchronizer.java">
+      <Filter>JavaConcurrent\Locks</Filter>
+    </None>
+    <None Include="locks\Condition.java">
+      <Filter>JavaConcurrent\Locks</Filter>
+    </None>
+    <None Include="locks\Lock.java">
+      <Filter>JavaConcurrent\Locks</Filter>
+    </None>
+    <None Include="locks\LockSupport.java">
+      <Filter>JavaConcurrent\Locks</Filter>
+    </None>
+    <None Include="locks\package-info.java">
+      <Filter>JavaConcurrent\Locks</Filter>
+    </None>
+    <None Include="locks\ReadWriteLock.java">
+      <Filter>JavaConcurrent\Locks</Filter>
+    </None>
+    <None Include="locks\ReentrantLock.java">
+      <Filter>JavaConcurrent\Locks</Filter>
+    </None>
+    <None Include="locks\ReentrantReadWriteLock.java">
+      <Filter>JavaConcurrent\Locks</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="unsafe.cpp" />

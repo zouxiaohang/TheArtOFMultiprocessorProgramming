@@ -89,6 +89,16 @@
     <None Include="concurrent\atomic\AtomicReferenceFieldUpdater.java" />
     <None Include="concurrent\atomic\AtomicStampedReference.java" />
     <None Include="concurrent\atomic\package-info.java" />
+    <None Include="locks\AbstractOwnableSynchronizer.java" />
+    <None Include="locks\AbstractQueuedLongSynchronizer.java" />
+    <None Include="locks\AbstractQueuedSynchronizer.java" />
+    <None Include="locks\Condition.java" />
+    <None Include="locks\Lock.java" />
+    <None Include="locks\LockSupport.java" />
+    <None Include="locks\package-info.java" />
+    <None Include="locks\ReadWriteLock.java" />
+    <None Include="locks\ReentrantLock.java" />
+    <None Include="locks\ReentrantReadWriteLock.java" />
     <None Include="Lock\ArrayLock.java" />
     <None Include="Lock\Backoff.java" />
     <None Include="Lock\BackoffLock.java" />
